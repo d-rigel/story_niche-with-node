@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= story.title
+  h5 writen by #{author}
+  p= story.body
+  if user
+    if user.id == story.author
+      a.btn.btn-primary(href="/stories/edit/"+story._id) Edit
+      a.btn.btn-danger.delete-story(href="#", data-id=story._id) Delete

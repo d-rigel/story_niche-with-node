@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  .container
+    h1 #{title}
+    ul.list-group
+      each story, i in stories
+        li.list-group-item
+          a(href="/stories/"+story._id)=story.title
